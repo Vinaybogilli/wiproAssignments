@@ -1,0 +1,13 @@
+package com.appointment.service;
+
+import com.appointment.entity.DoctorDTO;
+
+public class DoctorServiceImpl implements DoctorService{
+
+	@Override
+	public DoctorDTO createdoctor(DoctorDTO doctorDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

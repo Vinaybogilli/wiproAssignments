@@ -1,0 +1,9 @@
+package com.appointment.service;
+
+import com.appointment.entity.DoctorDTO;
+
+public interface DoctorService {
+
+	DoctorDTO createdoctor(DoctorDTO doctorDTO);
+
+}

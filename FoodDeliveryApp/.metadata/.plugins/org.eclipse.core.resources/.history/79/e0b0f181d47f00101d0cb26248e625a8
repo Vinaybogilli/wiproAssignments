@@ -1,0 +1,9 @@
+package com.appointment.repo;
+
+import org.hibernate.query.criteria.JpaPredicate;
+import org.hibernate.query.criteria.JpaQueryGroup;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DoctorRepository extends JpaRepository<T, ID>, JpaQueryGroup<T>, JpaPredicate {
+
+}

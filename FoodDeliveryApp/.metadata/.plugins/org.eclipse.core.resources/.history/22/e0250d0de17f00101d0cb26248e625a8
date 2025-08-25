@@ -1,0 +1,14 @@
+package com.appointment.service;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.appointment.entity.DoctorDTO;
+
+public interface DoctorService {
+
+	DoctorDTO createdoctor(DoctorDTO doctorDTO);
+
+	Page<DoctorDTO> getAllDoctors(Pageable pageable);
+
+}

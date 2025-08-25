@@ -1,0 +1,43 @@
+package com.appointment.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.appointment.entity.Doctor;
+import com.appointment.entity.DoctorDTO;
+import com.appointment.repo.DoctorRepository;
+
+public class DoctorServiceImpl implements DoctorService{
+	
+	
+	@Autowired
+	private final DoctorRepository doctorRepository;
+	
+	public DoctorServiceImpl(DoctorRepository doctorRepository) {
+		this.doctorRepository=doctorRepository;
+	}
+	
+	public DoctorDTO converttoDTO(Doctor doctor) {
+		DoctorDTO doctorDTO=new DoctorDTO();
+		doctorDTO.setId(doctor.getId());
+		doctorDTO.setName(doctor.getName());
+		doctorDTO.setHospitalName(doctor.getHospitalName());
+		doctorDTO.setSpeciality(doctor.getSpeciality());
+		doctorDTO.setDailyTime(doctor.getDailyTime());
+		return doctorDTO;
+		
+	}
+
+	@Override
+	public DoctorDTO createdoctor(DoctorDTO doctorDTO) {
+		
+		Doctor savedDoctor=new Doctor();
+		savedDoctor.setName(doctorDTO.getName());
+		savedDoctor.setHospitalName(doctorDTO.getHospitalName());
+		savedDoctor.setSpeciality(doctorDTO.getSpeciality());
+		savedDoctor.setDailyTime(doctorDTO.getDailyTime());
+		
+		doctorRepository.save(savedDoctor);
+		return converttoDTO(savedDoctor);
+	}
+
+}
